@@ -8,7 +8,7 @@ VERSIONFILE="ModuleManagerWatchDog.version"
 
 GD_DLLS="ModuleManagerWatchDog"
 GD_PRIORITY="666"
-DLLS="WatchDogWatchDog"
+DLLS="WatchDogWatchDog TweakScaleWatchDog"
 
 
 PROJECT_BRANCH=`git branch | grep \* | cut -d ' ' -f2`
