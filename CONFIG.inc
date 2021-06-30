@@ -1,7 +1,7 @@
 source ../CONFIG.inc
 
 PACKAGE="ModuleManagerWatchDog"
-TARGETDIR="${PACKAGE}"
+TARGETDIR="${PACKAGE}/Plugins"
 TARGETBINDIR="$TARGETDIR"
 PROJECTSDIR="$PACKAGE/"
 VERSIONFILE="ModuleManagerWatchDog.version"

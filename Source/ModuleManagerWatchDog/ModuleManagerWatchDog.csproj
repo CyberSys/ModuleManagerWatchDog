@@ -5,10 +5,10 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C4A875CC-E958-429F-944B-D0702EA76A89}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <BaseIntermediateOutputPath>..\..\obj\ModuleManagerWatchDog</BaseIntermediateOutputPath>
     <RootNamespace>ModuleManagerWatchDog</RootNamespace>
     <AssemblyName>ModuleManagerWatchDog</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+	<BaseIntermediateOutputPath>..\..\obj\$(AssemblyName)</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,34 +29,38 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="UnityEngine">
-      <HintPath>..\..\..\..\..\..\LIB\managed\1.4.1\UnityEngine.dll</HintPath>
-    </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\..\..\LIB\managed\1.4.1\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\LIB\managed\1.4.0\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\LIB\managed\1.4.0\UnityEngine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Properties\Version.cs">
-      <DependentUpon>Version.tt</DependentUpon>
-    </Compile>
     <Compile Include="Util\Log.cs" />
     <Compile Include="GUI\ShowStopperAlertBox.cs" />
     <Compile Include="GUI\Abstract.cs" />
-    <Compile Include="GUI\MessageBox.cs" />
     <Compile Include="GUI\FatalError.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Properties\Version.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Version.cs</LastGenOutput>
-    </None>
+    <Compile Include="GUI\MessageBox.cs" />
+    <Compile Include="..\LegalMamboJambo.cs">
+      <Link>Properties\LegalMamboJambo.cs</Link>
+    </Compile>
+    <Compile Include="..\Version.cs">
+      <DependentUpon>Version.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\" />
     <Folder Include="Util\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Version.tt">
+      <Link>Properties\Version.tt</Link>
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Version.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
